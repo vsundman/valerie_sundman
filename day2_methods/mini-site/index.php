@@ -5,7 +5,7 @@
 	<title>Example mini site with switch and Query String variables</title>
 <style type="text/css">
 	h2 {
-		color: pink;
+		color: red;
 	}
 	.home .home,
 	.about .about,
