@@ -1,0 +1,18 @@
+body{
+	background:#D7FBFA;
+}
+input, label{
+	display: block;
+	font-family: verdana;
+}
+label{
+	padding: 20px 0 5px 0;
+}
+.feedback{
+	outline: 1px solid #0962F7;
+}
+.inline-error{
+	color: red;
+	font-family: verdana;
+	width: 200px;
+}
