@@ -1,0 +1,76 @@
+body{
+	max-width: 1000px;
+	font: sans-serif;
+	margin: 0 auto;
+}
+#banner{
+	font-size: 36px;
+	font-family: 'Poiret One';
+	border-top: 20px solid #3C3D34;
+	border-bottom: 10px solid #3C3D34;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-image: url(../images/pattern1.png) 30 30 round;
+}
+
+#banner:after{
+ background-image: url(../images/pattern2.png);
+  opacity: 0.6;
+  width: 1000px;
+  height: 200px;
+  top: 0;
+  left: 10;
+  position: absolute;
+  z-index: -1;
+  content: "";
+}
+#banner h1 {
+	padding-left: 20px;
+	text-shadow: 2px 2px #fff;
+
+}
+#content{
+	font-family: 'Roboto Condensed', sans-serif;
+	width: 650px;
+	float: left;
+	padding: 35px 60px 0 15px;
+	background-color: rgba(255,238,179,0.4);
+	border-right: 8px solid #742626;
+}
+.post {
+	padding: 0 0 40px 0;
+}
+.post h1{
+	font-size: 24px;
+	color: #BF0404;
+	float: left;
+	margin: 0 0 5px 0;]
+
+}
+.post time {
+	color: #857701;
+	padding-left: 20px;
+	position: relative;
+	top: 8px;
+}
+.post p{
+	margin: 0;
+	clear: both;
+	line-height: 25px;
+	color: #063B17;
+}
+
+#sidebar{
+	min-width: 267px;
+	min-height: 800px;
+	float: left;
+
+}
+
+#colophon{
+	clear: left;
+	background-image: url(../images/pattern1.png);
+	color: #fff;
+	padding: 15px 0 15px 15px;
+
+}
