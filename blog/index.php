@@ -1,49 +1,31 @@
-	<?php 
-	//connect to DB!
-	require('includes/config.php'); 
-	require_once('includes/functions.php'); ?>
 
-
-
-	<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Demo PHP + MYSQL Blog</title>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-
-<!--                  FONTS                -->
-<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-<!--                  FONTS                -->
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
-
-
-</head>
-<body>
+<?php require('includes/header.php'); ?>
 	
-	<header id="banner">
-		<h1>Valerie's Blog</h1>
-	</header>
-	
+
+<div id="wrap">
 	<main id="content">
-
-	<?php //get all the published posts, most recent first
-		$query = "SELECT * FROM posts 
-				  WHERE is_published = 1 
-				  ORDER BY date DESC ";
-		//run the query. hold onto the results in a variable
-		$result = $db->query( $query );
+<?php //get all the published posts, most recent first
+		$query = "SELECT posts.* , users.username, categories.title AS category
+				  FROM posts, users, post_cats, categories 
+				  WHERE is_published = 1
+				  AND posts.user_id = users.user_id
+				  AND posts.post_id = post_cats.post_id
+				  AND categories.category_id = post_cats.category_id
+				  ORDER BY date DESC "; 
+		//Run the query. hold onto the results in a variable
+		$result = $db->query( $query );		
 		//check to see if one or more rows were found
 		if( $result->num_rows >= 1 ){ 
 			while( $row = $result->fetch_assoc() ){
-
-	 ?>
+		?>		
 
 		<article class="post">
 			<h1><?php echo $row['title'] ?></h1>
-			<time><?php echo convert_date( $row['date'] ) ?></time>
+			<div>By  <?php echo $row['username'] ?> | 
+				<?php echo convert_date( $row['date'] ) ?> |
+				In the category <?php echo $row['category'] ?>
+			</div>
+
 			<p><?php echo $row['body'] ?></p>
 		</article>
 	
@@ -53,11 +35,13 @@
 				echo 'Sorry, no posts to show';
 			} //end else
 		 ?> 
-
 	</main>
+</div>
 
-	<aside id="sidebar">This is the sidebar</aside>
+		<?php include('includes/sidebar.php'); ?>
 
-	<footer id="colophon">&copy; 2014 Valerie Sundman</footer>
-</body>
-</html>
+	
+
+
+<?php include('includes/footer.php'); ?>
+

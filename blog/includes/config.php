@@ -13,4 +13,10 @@
 		die( 'Unable to connect to Database' );
 	}
 
+//error reporting - set the sensitivity of PHP's error display
+
+	//show all errors except notices
+	error_reporting( E_ALL & ~E_NOTICE );
+	//show all errors (E_ALL)
+
 //no close PHP
