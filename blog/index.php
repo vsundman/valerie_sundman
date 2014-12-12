@@ -2,7 +2,7 @@
 <?php require('includes/header.php'); ?>
 	
 
-<div id="wrap">
+
 	<main id="content">
 <?php //get all the published posts, most recent first
 		$query = "SELECT posts.* , users.username, categories.title AS category
@@ -36,7 +36,7 @@
 			} //end else
 		 ?> 
 	</main>
-</div>
+
 
 		<?php include('includes/sidebar.php'); ?>
 

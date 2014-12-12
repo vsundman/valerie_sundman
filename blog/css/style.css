@@ -32,17 +32,22 @@ body{
 }
 
 #wrapper {
-	background-color: #fff;
-	float: right;
-	height: 100%;
+	background: #fff;
+	float: left;
+	width: 100%;
 }
 
 
 #content{
 	font-family: 'Roboto Condensed', sans-serif;
-	width: 700px;
+	background-color: rgba(240, 241, 221, 0.7);
+	border-left: #801D1D 5px solid;
+	min-height: 500px;
+	width: 70%;
 	float: right;
+	clear: right;
 	padding: 35px 60px 50px 15px;
+	display: inline;
 }
 
 .post {
@@ -67,15 +72,13 @@ body{
 	line-height: 25px;
 	color: #063B17;
 }
-#wrap{
-	outline: 1px solid #F00;
-	background: rgba(255,238,179,0.4);
-	clear: both;
-}
+
 
 #sidebar{
 	float: left;
-	padding: 0 25px 20px 30px;
+	width: 22%;
+	display: inline;
+	padding: 20px 0 20px 0;
 	background-color: #fff;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 14px;
@@ -98,7 +101,7 @@ body{
 }
 
 #colophon{
-	clear: both;
+	clear: right;
 	background-image: url(../images/pattern1.png);
 	color: #fff;
 	padding: 15px 0 15px 15px;

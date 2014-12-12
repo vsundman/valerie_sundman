@@ -17,4 +17,16 @@ function convert_date($dateR){
 	$dateR=str_replace($engMon,$months,$dateR);
 	return $dateR;
 }
+
+function convTimestamp($date){
+  $year   = substr($date,0,4);
+  $month  = substr($date,5,2);
+  $day    = substr($date,8,2);
+  $hour   = substr($date,11,2);
+  $minute = substr($date,14,2);
+  $second = substr($date,17,2);
+  $stamp =  date('D, d M Y H:i:s O', mktime($hour, $min, $sec, $month, $day, $year));
+  return $stamp;
+}
+
 //no close PHP
