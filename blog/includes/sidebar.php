@@ -1,6 +1,7 @@
 
 <aside id="sidebar">
 
+
 	<?php 
 	//get the title and post_id of the latest 5 published posts 
 	$query_latest = "SELECT title, post_id

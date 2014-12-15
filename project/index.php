@@ -10,8 +10,7 @@
 	</head>
 	<body>
 		<header id="banner">
-			<img src="http://lorempixel.com/output/cats-q-g-1000-105-2.jpg" />
-			<h1>Cute Cottage</h1>
+			<h1><a href="index.php">Cute Cottage</a></h1>
 			<nav id="logout">
 				<ul>
 					<li class="dhome"><a href="#">Home</a></li>
@@ -66,7 +65,7 @@
 		</main>
 
 		<footer id="foot">&copy; 2014 Valerie Sundman
-			<nav id="logout">
+			<nav id="footernav">
 					<ul>
 						<li class="dhome"><a href="#">Home</a></li>
 						<li class="dabout"><a href="#">About Us</a></li>
