@@ -1,28 +1,5 @@
-	<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Cute Cottage</title>
+<?php require('includes/header.php'); ?>	
 
-		<link rel="stylesheet" type="text/css" href="css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	</head>
-	<body>
-		<header id="banner">
-			<h1><a href="index.php">Cute Cottage</a></h1>
-			<nav id="logout">
-				<ul>
-					<li class="dhome"><a href="#">Home</a></li>
-					<li class="dabout"><a href="#">About Us</a></li>
-					<li class="drooms"><a href="#">Rooms</a></li>
-					<li class="dthemes"><a href="#">Themes</a></li>
-					<li class="dlogin"><a href="#">Log In</a></li>
-					<li class="dsignup"><a href="#">Sign Up</a></li>
-				</ul>
-			</nav> 
-
-		</header>
 
 		<main id="content">
 
@@ -64,20 +41,4 @@
 
 		</main>
 
-		<footer id="foot">&copy; 2014 Valerie Sundman
-			<nav id="footernav">
-					<ul>
-						<li class="dhome"><a href="#">Home</a></li>
-						<li class="dabout"><a href="#">About Us</a></li>
-						<li class="drooms"><a href="#">Rooms</a></li>
-						<li class="dthemes"><a href="#">Themes</a></li>
-						<li class="dlogin"><a href="#">Log In</a></li>
-						<li class="dsignup"><a href="#">Sign Up</a></li>
-						<li class="dprivacy"><a href="#">Privacy Policy</a></li>
-						<li class="dsitemap"><a href="#">Site Map</a></li>
-
-					</ul>
-				</nav> 
-		</footer>
-	</body>
-</html>
+<?php include('includes/footer.php');?>

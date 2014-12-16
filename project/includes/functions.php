@@ -18,17 +18,6 @@ function convert_date($dateR){
 	return $dateR;
 }
 
-function convTimestamp($date){
-  $year   = substr($date,0,4);
-  $month  = substr($date,5,2);
-  $day    = substr($date,8,2);
-  $hour   = substr($date,11,2);
-  $minute = substr($date,14,2);
-  $second = substr($date,17,2);
-  $stamp =  date('D, d M Y H:i:s O', mktime($hour, $min, $sec, $month, $day, $year));
-  return $stamp;
-}
-
 /**
 * Clean String Inputs before submitting to DB
 * @param $input - the dirty data that needs cleaning!
@@ -37,8 +26,6 @@ function convTimestamp($date){
 */
 function clean_input( $input, $db ){
 	return mysqli_real_escape_string($db, strip_tags($input));	
-
-
 }
 
 

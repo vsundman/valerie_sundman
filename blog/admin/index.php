@@ -1,24 +1,17 @@
-<?php 
-	session_start();
-//security check! Make sure the person viewing the page is Logged in
-	if( $_SESSION['loggedin'] != true ){
-		//kick them out to the login form
-		header('Location:login.php');
-		//stop this file from loading
-		die('You do not have permission to view this page.');
-	}
-	
-?>
+<?php require('admin-header.php'); ?>
 
-	<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Blog Admin Panel</title>
-</head>
-<body>
-	This is the Dashboard of the admin panel
-	<a href="login.php?action=logout">log out</a>
+	<section>
+		<h1>Stats</h1>
+		<ul>
+			<li>You have <?php echo count_posts($user_id, 1, $db); ?> published posts</li>
+			<li>You have <?php echo count_posts($user_id, 2, $db); ?> post drafts</li>
+			<li>Your posts have <?php echo count_user_post_comments($user_id, $db); ?> comments</li>
+		</ul>
+	</section>
 
-</body>
-</html>
+
+
+
+
+
+<?php include('admin-footer.php'); ?>
