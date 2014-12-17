@@ -1,10 +1,6 @@
 <?php 
-	session_start();
-	require('includes/header.php');
-//connect to DB
-require('includes/config.php');
-//include the helper functions
-include_once('includes/functions.php');
+require('includes/header.php');
+
 
 
 //parse the form if it was submited
@@ -19,9 +15,9 @@ if( $_POST['did_login'] == true ){
 	//make sure the values are within the length limits
 	if( strlen($username) < 50 
 		AND 
-		strlen($username) > 3 
+		strlen($username) >= 3 
 		AND 
-		strlen($password) > 8 ){
+		strlen($password) >= 8 ){
 
 		//check to see if these credentials exist in the DB
 		$query = "SELECT user_id
@@ -47,8 +43,8 @@ if( $_POST['did_login'] == true ){
 			setcookie( 'user_id', $user_id,  time() + 60 * 60 * 24 * 2 );
 			$_SESSION['user_id'] = $user_id;
 
-			//redirect to profile page
-			header('Location:profile.php');
+			//redirect to home page
+			header('Location:index.php');
 
 		}else{
 			$message = 'Your username and/or password is incorrect.';
@@ -60,39 +56,11 @@ if( $_POST['did_login'] == true ){
 	}
 }//end if did login
 
-//LOGOUT!!!!
 
-	if( $_GET['action'] == 'logout' ){
-		//remove all session_id cookie from the user's computer
-		if (ini_get("session.use_cookies")) {
-		    $params = session_get_cookie_params();
-		    setcookie(session_name(), '', time() - 42000,
-		        $params["path"], $params["domain"],
-		        $params["secure"], $params["httponly"]
-		    );
-		}
-		//close the session on the server
-		session_destroy();
-		unset( $_SESSION['loggedin'] );
-		//set cookies to null
-		setcookie( 'loggedin', '' );
-
-		unset($_SESSION['user_id']);
-		setcookie('user_id', '');
-
-
-	//check to see if the cookie is still valid, if so, re-build the session
-	}elseif( $_COOKIE['loggedin'] == true ){
-		//TO DO: fix this security loophole
-		$_SESSION['loggedin'] = true;
-		$_SESSION['user_id'] = $_COOKIE['user_id'];
-		//redirect to home
-		header('Location:index.php');
-	}//end elseif 
 
 ?>
 
-<body>
+<?php echo $message ?>
 
 <!--Register Form -->
 	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">

@@ -1,0 +1,41 @@
+
+body{
+	max-width: 1000px;
+	font: sans-serif;
+	margin: 0 auto;
+	min-width: 1000px;
+}
+h1{
+	background-image: url(../images/pattern1.png);
+	font-size: 36px;
+	font-family: 'Poiret One';
+	color: #fff;
+	text-shadow: 3px 1px 7px #000;
+	padding: 10px 20px;
+}
+
+ul {
+	display: block;
+	padding: 0;
+	font-family: 'Roboto Condensed';
+}
+ul li {
+	display: inline;
+	padding: 10px;
+	margin-right: 50px;
+
+}
+ul li a {
+	text-decoration: none;
+	color: #000;
+}
+ul.utilities li {
+	font-size: 20px;
+	float: right;
+	position: relative;
+	bottom: 100px;
+}
+.utilities li a {
+	color: #FFF;
+
+}

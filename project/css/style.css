@@ -35,8 +35,15 @@ h1{
 	font-family: 'little_lord_fontleroy_nfRg';
 }
 
-
-
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+div.uploadfeed{
+	height: 267px;
+	width: 168px;
+	border: 3px solid #afe3d6;
+}
 
 
 

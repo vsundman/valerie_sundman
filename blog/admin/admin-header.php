@@ -21,6 +21,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Blog Admin Panel</title>
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../css/admin-style.css">
+	<!--                  FONTS                -->
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<!--                  FONTS                -->
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -29,7 +35,7 @@
 		<nav>
 			<ul>
 				<li><a href="index.php">Dashboard</a></li>
-				<li><a href="#">Write New Post</a></li>
+				<li><a href="write-post.php">Write New Post</a></li>
 				<li><a href="#">Manage Posts</a></li>
 				<li><a href="#">Manage Comments</a></li>
 				<li><a href="#">Edit Profile</a></li>
@@ -37,8 +43,8 @@
 		</nav>
 
 		<ul class="utilities">
-			<li><a href="../">View Blog</li>
-			<li><a href="login.php?action=logout">log out</a></li>
+			<li><a href="../">View Blog</a></li>
+			<li><a href="login.php?action=logout">Log Out</a></li>
 		</ul>
 
 		<?php user_badge($user_id, $db); ?>
