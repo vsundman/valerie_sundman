@@ -36,7 +36,7 @@
 			<ul>
 				<li><a href="index.php">Dashboard</a></li>
 				<li><a href="write-post.php">Write New Post</a></li>
-				<li><a href="#">Manage Posts</a></li>
+				<li><a href="manage-posts.php">Manage Posts</a></li>
 				<li><a href="#">Manage Comments</a></li>
 				<li><a href="#">Edit Profile</a></li>
 			</ul>	

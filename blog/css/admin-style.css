@@ -37,5 +37,30 @@ ul.utilities li {
 }
 .utilities li a {
 	color: #FFF;
+}
+
+form {
+	width: 80%;
+	margin: 0 auto;
+	padding: 15px;
+}
+label {
+	display: block;
+	padding: 10px 0 0 0;
+	font-family: 'Roboto Condensed';
+}
+textarea, input[type="text"], fieldset{
+	background-color: #CEFFCE;
+	padding: 4px;
+	border-radius: 3px;
+}
+textarea {
+	width: 100%;
+	min-height: 150px;
 
 }
+form h2{
+	padding: 0;
+	margin: 0;
+}
+

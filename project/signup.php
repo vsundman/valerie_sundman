@@ -68,9 +68,9 @@
 		//if valid, add the new user to DB
 		if($valid){
 			$query_newuser = "INSERT INTO users
-								(username, is_admin, email, password, date_joined)
+								(username, email, password, date_joined)
 								VALUES
-								( '$username', 0, '$email', '$hashed_password', now() )";
+								( '$username', '$email', '$hashed_password', now() )";
 
 			$result_newuser = $db->query($query_newuser);
 			//check to make sure the user was added
@@ -92,7 +92,6 @@
 				$errors['db'] = 'Something went wrong during account creation.';
 			}//end else
 		}
-
 	}//end of parser
 
 ?>
