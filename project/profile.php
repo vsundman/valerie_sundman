@@ -23,6 +23,7 @@
 
 <header>
 		<h2>Welcome! <?php echo $row['username']; ?></h2>
+		<?php user_badge($user_id, $db); ?>
 		<nav>
 			<ul>
 				<li><a href="write-post.php">Upload New Post</a></li>
@@ -33,7 +34,6 @@
 
 
 
-		<?php user_badge($user_id, $db); ?>
 
 	</header>
 

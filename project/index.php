@@ -19,10 +19,10 @@
 
 				<h4>Is this a cute look?</h4>
 				<div id="vote_yes">
-					THUMBS UP
+					<img src="images/thumbup.png"/>
 				</div>
 				<div id="vote_no">
-					THUMBS DOWN
+					 <img src="images/thumbdown.png"/>
 				</div>
 
 

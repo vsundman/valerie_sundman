@@ -96,14 +96,23 @@ function count_user_post_comments( $user, $db ){
 		return $row['total'];
 }
 
-/**
- * Generate an ID badge for any user
- *
- *
- */
+
+
+function convTimestamp($date){
+  $year   = substr($date,0,4);
+  $month  = substr($date,5,2);
+  $day    = substr($date,8,2);
+  $hour   = substr($date,11,2);
+  $minute = substr($date,14,2);
+  $second = substr($date,17,2);
+  $stamp =  date('D, d M Y H:i:s O', mktime($hour, $min, $sec, $month, $day, $year));
+  return $stamp;
+}
+
+
 function user_badge( $user, $db ){
-	//get the user's name, profile pic, admin status
-	$query = "SELECT username, userpic, is_admin
+	//get the user's name, profile pic, 
+	$query = "SELECT username, userpic
 				FROM users 
 				WHERE user_id = $user
 				LIMIT 1 ";
@@ -116,36 +125,23 @@ function user_badge( $user, $db ){
 			$image = $row['userpic'];
 		}else{
 			//DOCUMENT_ROOT is htdocs
-			$image =  'http://localhost/valerie_sundman/blog/images/default-user.jpg';
+			$image =  'http://localhost/valerie_sundman/project/images/default_user.jpg';
 		}
 	//display it
 		?>
 		<!-- SOME HTML HERE -->
 		<div class="user-badge">
-
-		
 			<img src="<?php echo $image; ?>">
-			<div class="user-name"><?php echo $row['username']; ?></div>
-			<div class="user-role">
-			<?php echo $row['is_admin'] == 1 ? 'Administrator' : 'Commenter'; ?></div>
 		</div>
 		<?php 
 	}
-
-
-
 }//end user_badge
 
-function convTimestamp($date){
-  $year   = substr($date,0,4);
-  $month  = substr($date,5,2);
-  $day    = substr($date,8,2);
-  $hour   = substr($date,11,2);
-  $minute = substr($date,14,2);
-  $second = substr($date,17,2);
-  $stamp =  date('D, d M Y H:i:s O', mktime($hour, $min, $sec, $month, $day, $year));
-  return $stamp;
-}
+
+
+
+
+
 
 
 //no close PHP

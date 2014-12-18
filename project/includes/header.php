@@ -54,6 +54,12 @@ include_once('includes/functions.php');
 	<body>
 		<header id="banner">
 			<h1><a href="index.php">Cute Cottage</a></h1>
+
+			<form action="search.php" method="get" id="searchform">
+				<input type="search" name="phrase" id="phrase" value="<?php echo $_GET['phrase'] ?>">
+				<input type="submit" value="Search">
+			</form>
+			
 			<nav id="logout">
 				<ul>
 					<li class="dhome"><a href="index.php">Home</a></li>
@@ -83,6 +89,7 @@ include_once('includes/functions.php');
 
 							<?php
 						}?>
+
 
 
 
