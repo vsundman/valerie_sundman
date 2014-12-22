@@ -27,6 +27,10 @@ function convert_date($dateR){
 function clean_input( $input, $db ){
 	return mysqli_real_escape_string($db, strip_tags($input));	
 }
+function clean_int($input, $db ){
+	return filter_var($input, FILTER_SANITIZE_NUMBER_INT);	
+
+}
 
 
 //output any array as an unordered list

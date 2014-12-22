@@ -24,9 +24,109 @@ form  {
 	padding: 10px 5px 0 0;
 }
 
+#content h2{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 32px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+#content p {
+	font-family: 'Open Sans Condensed', sans-serif;	
+	font-size: 20px;
+	line-height: 30px;
+
+	padding-top: 0;
+	margin: 0;
+
+}
+#wrapper {
+	float: left;
+	width: 60%;
+}
 
 
 
+/*NEWEST UPLAODS STYLES*/
+#wrap {
+	float: left;
+	width: 100%;
+
+}
+.post {
+	float: left;
+	padding: 10px;
+	margin: 0;
+}
+
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+div.uploadfeed{
+	height: 267px;
+	width: 168px;
+	border: 3px solid #afe3d6;
+	text-align: center;
+	line-height: 25px;
+}
+div.uploadfeed img.thumbs{
+	padding: 10px;
+}
+
+
+/*Search Room Styles*/
+.search-results{
+	width: 100%;
+	padding: 10px;
+	margin: 0;
+}
+.search-results article{
+	float: left;
+	padding: 10px;
+}
+#searchform {
+	font-family: 'Open Sans Condensed', sans-serif;	
+	margin-right: 30px;
+}
+#searchform #phrase{
+	width: 200px;
+	padding: 8px;
+	background-color: #98d3c4;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+}
+#searchform #searchbutton{
+	border: none;
+	background-color: #98d3c4;
+	font-size: 22px;
+	padding-bottom: 7px;
+	padding-top: 3px;
+}
+
+
+/************************/
+
+/*DECOR OF WEEK ASIDE STYLES*/
+
+#sidebar {
+	background-color: #cee6d9;
+	float: right;
+	width: 30%;
+	border: 4px solid #afe3d6;
+}
+#sidebar #vote_yes {
+	float: left;
+	padding: 15px;
+	margin-left: 60px;
+}
+#sidebar #vote_no {
+	padding: 15px;
+	margin-left: 170px;
+}
+
+/********************/
 
 ul{
 	padding: 0;
@@ -50,15 +150,6 @@ ul{
 	font-family: 'little_lord_fontleroy_nfRg';
 }
 
-img {
-	max-height: 100%;
-	max-width: 100%;
-}
-div.uploadfeed{
-	height: 267px;
-	width: 168px;
-	border: 3px solid #afe3d6;
-}
 
 
 footer {
@@ -66,6 +157,7 @@ footer {
 	width: 100%;
 	height: 98px;
 	border-top: 4px solid #afe3d6;
+	clear: both;
 }
 
 ul{

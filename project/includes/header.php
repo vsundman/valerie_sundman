@@ -46,6 +46,9 @@ include_once('includes/functions.php');
 
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- FONTS -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
 
 		<!-- This link allows feed readers and apps to find our rss file -->
 		<link rel="alternate" type="application/rss+xml" href="rss.php">
@@ -57,7 +60,7 @@ include_once('includes/functions.php');
 
 			<form action="search.php" method="get" id="searchform">
 				<input type="search" name="phrase" id="phrase" value="<?php echo $_GET['phrase'] ?>">
-				<input type="submit" value="Search">
+				<input type="submit" value="Search" id="searchbutton">
 			</form>
 			
 			<nav id="logout">
@@ -100,4 +103,3 @@ include_once('includes/functions.php');
 
 		</header>
 <body>
-

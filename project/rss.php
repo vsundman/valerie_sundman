@@ -13,7 +13,7 @@ include_once( 'includes/functions.php' );
 		<link>http://localhost/valerie_sundman/project/</link>
 		
 		<?php //get up to 6 most recent published posts
-			$query = "SELECT posts.post_id, posts.date, posts.title, posts.image, themes.name AS theme, rooms.name AS room, 				users.username
+			$query = "SELECT posts.post_id, posts.date, posts.title, posts.image, themes.name AS theme, rooms.name AS room, users.username
 					  FROM posts, themes, rooms, users
 					  WHERE users.user_id = posts.user_id
 					  AND posts.theme_id = themes.theme_id
@@ -27,14 +27,25 @@ include_once( 'includes/functions.php' );
 
 		<item>
 			<title><?php echo $row['title']; ?></title>
-			<link>http://localhost/valerie_sundman/project/single_post.php?post_id=<?php echo $row['post_id']; ?></link>
+
+			<link>http://localhost/valerie_sundman/project/single_post.php?post_id=<?php echo $row['post_id']; ?> </link>
 
 			<guid>http://localhost/valerie_sundman/project/single_post.php?post_id=<?php echo $row['post_id']; ?></guid> <!--same as link when the post id gets put in -->
 			<!-- the CDATA lets you put images and weird stuff in your body without breaking the XML -->
 			<author>  <?php echo $row['username']; ?></author>
-			<description><?php echo $row['room'];?> - <?php echo $row['theme'];?></description>
+
+			<description>
+				<image><?php echo $row['image']; ?></image>
+
+				<?php echo $row['room'];?> - <?php echo $row['theme'];?> 
+
+			</description>
+
+
+
 			<pubDate><?php echo convTimestamp($row['date']); ?></pubDate>
 		</item>
+
 		<?php 
 				}//end while 
 			}//endif 

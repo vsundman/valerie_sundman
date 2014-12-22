@@ -65,8 +65,8 @@ $page_number = 1; //default current starting page
 				 <?php echo $row['room'] ?> | 
 				 <?php echo $row['theme'] ?> <br>
 				 <?php echo $row['date'] ?>
-				 <img src="images/thumbup.png"/>
-				 <img src="images/thumbdown.png"/>
+				 <img src="images/thumbup.png" class="thumbs" />
+				 <img src="images/thumbdown.png" class="thumbs"/>
 				</div>
 			</article>
 

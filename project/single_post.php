@@ -5,7 +5,8 @@ $post_id = $_GET['post_id'];
 ?>
 
 <div id="wrap">
-	<main id="content">
+	<main id="content" class="newest">
+		<h2>Newest Uploads</h2>
 <?php //get all the published posts, most recent first
 		$query = "SELECT posts.post_id, posts.date, posts.title, posts.image, themes.name AS theme, rooms.name AS room, 				users.username
 					  FROM posts, themes, rooms, users
@@ -23,8 +24,7 @@ $post_id = $_GET['post_id'];
 		?>		
 
 		<section id="newest">
-			<h2>Newest Uploads</h2>
-				<figure class="post">
+					<figure class="post">
 
 					<div class="uploadfeed">
 						 <?php echo $row['image']?> 

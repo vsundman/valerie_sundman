@@ -73,3 +73,7 @@ if( $_POST['did_login'] == true ){
 		<input type="submit" value="Log In">
 		<input type="hidden" name="did_login" value="true">
 	</form>
+
+
+
+	<?php include('includes/footer.php'); ?>

@@ -5,13 +5,12 @@
 
 				<h2>Rooms</h2>
 			<ul id="roomlist">
-				<li><a href="#">Holidays</a></li>
-				<li><a href="#">Beach</a></li>
-				<li><a href="#">Vintage</a></li>
-				<li><a href="#">Modern</a></li>
-				<li><a href="#">Country</a></li>
-				<li><a href="#">Western</a></li>
-				<li><a href="#">Others</a></li>
+				<li><a href="#">Kitchen</a></li>
+				<li><a href="#">Bathroom</a></li>
+				<li><a href="#">Bedroom</a></li>
+				<li><a href="#">Living Room</a></li>
+				<li><a href="#">Dining Room</a></li>
+				<li><a href="#">Stairs/Hall</a></li>
 			</ul>
 
 			<!-- show the newest published posts by room -->
