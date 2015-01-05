@@ -116,7 +116,7 @@ function convTimestamp($date){
 
 function user_badge( $user, $db ){
 	//get the user's name, profile pic, 
-	$query = "SELECT username, userpic
+	$query = "SELECT username, medium_img
 				FROM users 
 				WHERE user_id = $user
 				LIMIT 1 ";
@@ -125,10 +125,11 @@ function user_badge( $user, $db ){
 	if($result->num_rows == 1){
 		$row = $result->fetch_assoc();
 
-		if ( $row['userpic'] != '' ) {
-			$image = $row['userpic'];
+		if ( $row['medium_img'] != '' ) {
+			$image = SITE_PATH . $row['medium_img'];
 		}else{
 			//DOCUMENT_ROOT is htdocs
+			//default img
 			$image =  'http://localhost/valerie_sundman/project/images/default_user.jpg';
 		}
 	//display it
@@ -140,11 +141,6 @@ function user_badge( $user, $db ){
 		<?php 
 	}
 }//end user_badge
-
-
-
-
-
 
 
 

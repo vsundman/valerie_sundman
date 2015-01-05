@@ -33,7 +33,7 @@ include_once('includes/functions.php');
 		$_SESSION['user_id'] = $_COOKIE['user_id'];
 		
 	}//end elseif 
-
+	
 
 
 ?>

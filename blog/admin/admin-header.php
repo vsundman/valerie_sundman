@@ -11,8 +11,11 @@
 	require('../includes/config.php');
 	include_once('../includes/functions.php');
 
+
 //who is logged in? store in a var for easy use on admin pages
 	$user_id = $_SESSION['user_id'];
+	//uploader for Avatars
+	include('upload-parser.php');
 	
 ?>
 
@@ -38,7 +41,7 @@
 				<li><a href="write-post.php">Write New Post</a></li>
 				<li><a href="manage-posts.php">Manage Posts</a></li>
 				<li><a href="#">Manage Comments</a></li>
-				<li><a href="#">Edit Profile</a></li>
+				<li><a href="edit-profile.php">Edit Profile</a></li>
 			</ul>	
 		</nav>
 

@@ -2,6 +2,9 @@
 
 	require('includes/security-check.php');
 
+	//IMAGE UPLOADER
+	include('includes/upload-parser.php');
+
 //parse the form if submitted
 if( $_POST['did_post'] ){
 	//sanitize the data
@@ -9,6 +12,7 @@ if( $_POST['did_post'] ){
 	$description = clean_input( $_POST['description'], $db );
 	$room = $_POST['room'];
 	$theme =$_POST['theme'];
+
 
 	//validate
 	$valid = true;
@@ -34,9 +38,9 @@ if( $_POST['did_post'] ){
 	//add to database
 	if($valid){
 		$query_addpost = "INSERT INTO posts
-						(title, description, user_id, room_id, theme_id, date)
+						(title, description, image, user_id, room_id, theme_id, date)
 						VALUES
-					 	('$title', '$description', $user_id, $room, $theme, now())";
+					 	('$title', '$description', $uploadedfile, $user_id, $room, $theme, now())";
 		$result_addpost = $db->query($query_addpost);
 		//make sure it worked
 		if( $db->affected_rows == 1 ){
@@ -51,18 +55,18 @@ if( $_POST['did_post'] ){
 	} //end if valid
 } //end parse
 ?>
-<main>
+<main id="main">
 	<h2>Upload</h2>
 
 	<?php echo $message; ?>
 
-	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
 		
 		<label for="title">Title:</label>
 		<input type="text" name="title" id="title">
 
 		<label for="image">Image:</label>
-		<input type="file" name="img" id="image" accept="image/x-png, image/gif, image/jpeg">
+		<input type="file" name="uploadedfile" id="image">
 
 		<label for="description">Description:</label>
 		<textarea name="description" id="description"></textarea>

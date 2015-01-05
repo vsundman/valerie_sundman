@@ -8,7 +8,7 @@ $post_id = $_GET['post_id'];
 	<main id="content" class="newest">
 		<h2>Newest Uploads</h2>
 <?php //get all the published posts, most recent first
-		$query = "SELECT posts.post_id, posts.date, posts.title, posts.image, themes.name AS theme, rooms.name AS room, 				users.username
+		$query = "SELECT posts.post_id, posts.date, posts.title, posts.large_img, themes.name AS theme, rooms.name AS room, 				users.username
 					  FROM posts, themes, rooms, users
 					  WHERE users.user_id = posts.user_id
 					  AND posts.theme_id = themes.theme_id
@@ -27,7 +27,7 @@ $post_id = $_GET['post_id'];
 					<figure class="post">
 
 					<div class="uploadfeed">
-						 <?php echo $row['image']?> 
+						 <?php echo $row['large_img']?> 
 
 						 <br>
 						 <?php echo $row['title'] ?> <br>

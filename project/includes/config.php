@@ -13,6 +13,12 @@
 		die( 'Unable to connect to Database' );
 	}
 
+	//Define file path constants'
+	//on xampp, DOCUMENT_ROOT takes you to c:/xampp/htdocs
+	define("SITE_PATH", 'http://localhost/valerie_sundman/project/');
+
+
+
 //error reporting - set the sensitivity of PHP's error display
 
 	//show all errors except notices

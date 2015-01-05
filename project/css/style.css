@@ -23,8 +23,8 @@ form  {
 	float: right;
 	padding: 10px 5px 0 0;
 }
-
-#content h2{
+/*TERMS*/
+#content h2, #content h3{
 	font-family: 'News Cycle', sans-serif;
 	font-size: 32px;
 	font-weight: normal;
@@ -35,11 +35,31 @@ form  {
 	font-family: 'Open Sans Condensed', sans-serif;	
 	font-size: 20px;
 	line-height: 30px;
-
 	padding-top: 0;
 	margin: 0;
-
+	padding-bottom: 10px;
 }
+#content h3 {
+	color: #98D3C4;
+}
+#content li{
+	list-style-type: none;
+	margin-bottom: 2px;
+	font-weight: bold;
+}
+#content ul.list li,
+#content ol.list li {
+	font-weight: normal;
+	padding-bottom: 10px;
+}
+#content ol.list li {
+	list-style-type: upper-roman;
+}
+#content ul.list li{
+	list-style-type: circle;
+	margin-left: 40px;
+}
+
 #wrapper {
 	float: left;
 	width: 60%;
@@ -47,7 +67,7 @@ form  {
 
 
 
-/*NEWEST UPLAODS STYLES*/
+/*NEWEST UPLOADS STYLES*/
 #wrap {
 	float: left;
 	width: 100%;
@@ -152,6 +172,58 @@ ul{
 
 
 
+
+/*                     */
+/* PROFILE PAGE STYLES*/
+/*                     */
+header#profilepage h2{
+	font-family: 'Open Sans Condensed';
+	font-size: 50px;
+	font-weight: normal;
+	position: relative;
+	bottom: 80px;
+	left: 300px;
+}
+.profilenav ul li {
+	list-style-type: none;
+	display: inline;
+	padding: 10px;
+	font-family: 'Open Sans Condensed';
+	position: relative;
+	bottom: 80px;
+}
+.profilenav ul li a{
+	text-decoration: none;
+	color: #000;
+	margin-left: 40px;
+	font-size: 28px;
+}
+.userpic {
+	border: 1px solid #AFE3D6;
+	float: left;
+	max-height: 150px;
+	position: relative;
+	bottom: 80px;
+}
+
+
+/*MAIN STYLES for all pages (used id main)*/
+#main {
+	font-family: 'Open Sans Condensed';
+	font-weight: normal;
+	width: 960px;
+
+}
+
+/*ABOUT STYLES*/
+#main .para {
+	font-size: 20px;
+	line-height: 40px;
+}
+
+
+
+/* FOOTER STYLES*/
 footer {
 	background-color: #cee6d9;
 	width: 100%;

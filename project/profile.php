@@ -4,10 +4,10 @@
 
  ?>
 
-<header>
+<header id="profilepage">
 		<h2>Welcome! <?php echo $row['username']; ?></h2>
-		<?php user_badge($user_id, $db); ?>
-		<nav>
+		<div class="userpic"><?php user_badge($user_id, $db); ?></div>
+		<nav class="profilenav">
 			<ul>
 				<li><a href="upload-post.php">Upload New Post</a></li>
 				<li><a href="manage-posts.php">Manage Posts</a></li>
@@ -25,7 +25,7 @@
 
 
 
-THIS IS THE PROFILE PAGE
+
 
 
 <?php include('includes/footer.php'); ?>	

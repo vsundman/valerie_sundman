@@ -13,7 +13,8 @@ if( $_POST['did_post'] ){
 	$description = clean_input( $_POST['description'], $db );
 	$room = $_POST['room'];
 	$theme =$_POST['theme'];
-	
+	$image = 
+
 	//validate
 	$valid = true;
 
@@ -43,6 +44,15 @@ if( $_POST['did_post'] ){
 						  	  description = '$description',
 						  	  theme_id = $theme,
 						  	  room_id = $room
+						  	  thumb_img = $image
+						  	  /*--------------------------------------------------*/
+						  	/*figure out if i need to add another one for large image*/
+
+
+
+
+
+
 						  WHERE post_id = $post_id
 						  LIMIT 1";
 
@@ -81,13 +91,13 @@ $result_post = $db->query($query_post);
 
 	<?php echo $message?>
 
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>?post_id=<?php echo $post_id ?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>?post_id=<?php echo $post_id ?>" method="post" enctype="multipart/form-data">
 		
 		<label for="title">Title:</label>
 		<input type="text" name="title" id="title" value="<?php echo $row_post['title'];?>">
 
 		<label for="image">Image:</label>
-		<input type="file" name="img" id="image" accept="image/x-png, image/gif, image/jpeg">
+		<input type="file" name="uploadedfile" id="image">
 
 		<label for="description">Description:</label>
 		<textarea name="description" id="description"><?php echo $row_post['description']; ?></textarea>
