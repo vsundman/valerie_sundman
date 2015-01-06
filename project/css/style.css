@@ -18,6 +18,10 @@ h1{
 	position: absolute;
 	top: -20px;
 }
+a{
+	text-decoration: none;
+	color: #000;
+}
 
 form  {
 	float: right;
@@ -145,7 +149,25 @@ div.uploadfeed img.thumbs{
 	padding: 15px;
 	margin-left: 170px;
 }
-
+#sidebar h3 {
+	text-align: center;
+	color: #000;
+}
+#sidebar a{
+	text-decoration: none;
+	color: #000;
+}
+#sidebar h4{
+	margin: 0;
+	padding: 5px 0;
+	font-weight: normal;
+	font-size: 22px;
+	text-align: center;
+}
+#sidebar p{
+	text-align: center;
+	padding: 0;
+}
 /********************/
 
 ul{

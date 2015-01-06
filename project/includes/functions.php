@@ -143,5 +143,27 @@ function user_badge( $user, $db ){
 }//end user_badge
 
 
+/**
+ * helper for generating complete URL or filepath to an uploaded image
+ * Path will look like C:/xampp/htdocs/folder/uploads/s45fs836p434_small.jpg
+ * Path will look like C:/xampp/htdocs/folder/uploads/s45fs836p434_small.jpg
+ * URL will look like http://localhost/folder/uploads/s45fs836p434_small.jpg
+ * @param $key string randomly generated key unique to each image
+ * @param $size_name string. valid values are 'thumb_img' (DEFAULT), 'medium_img', 'large_img'
+ * @param $is_path boolean. 1 = returns a file path
+ *							0 = returns a URL
+ */
+function uploaded_image_path($key, $size_name = 'thumb_img', $is_path = true){
+	if($is_path){
+		return SITE_PATH . 'uploads/' .$key . '_' . $size_name . '.jpg';
+	}else{
+		return SITE_URL . 'uploads/' .$key . '_' . $size_name . '.jpg';
+	}
+}
+
+
+
+
+
 
 //no close PHP

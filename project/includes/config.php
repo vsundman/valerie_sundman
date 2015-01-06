@@ -15,7 +15,8 @@
 
 	//Define file path constants'
 	//on xampp, DOCUMENT_ROOT takes you to c:/xampp/htdocs
-	define("SITE_PATH", 'http://localhost/valerie_sundman/project/');
+	define("SITE_URL", 'http://localhost/valerie_sundman/project/');
+	define("SITE_PATH",  'C:/xampp/htdocs/valerie_sundman/project/');
 
 
 

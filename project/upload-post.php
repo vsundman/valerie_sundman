@@ -3,58 +3,11 @@
 	require('includes/security-check.php');
 
 	//IMAGE UPLOADER
-	include('includes/upload-parser.php');
+	include('includes/post-upload-parser.php');
 
-//parse the form if submitted
-if( $_POST['did_post'] ){
-	//sanitize the data
-	$title = clean_input( $_POST['title'], $db );
-	$description = clean_input( $_POST['description'], $db );
-	$room = $_POST['room'];
-	$theme =$_POST['theme'];
-
-
-	//validate
-	$valid = true;
-
-	//did they leave title or description blank?
-	if( strlen($title) == 0 OR strlen($description) == 0 ){
-		$valid = false;
-		$message[] = 'Please fill in all fields.';
-	}
-
-	//check for bad value in room or theme
-	if( ! is_numeric($room) ){
-		$valid = false;
-		$message[] = 'invalid room.';
-	}
-
-	if( ! is_numeric($theme) ){
-		$valid = false;
-		$message[] = 'invalid theme.';
-	}
-
-	
-	//add to database
-	if($valid){
-		$query_addpost = "INSERT INTO posts
-						(title, description, image, user_id, room_id, theme_id, date)
-						VALUES
-					 	('$title', '$description', $uploadedfile, $user_id, $room, $theme, now())";
-		$result_addpost = $db->query($query_addpost);
-		//make sure it worked
-		if( $db->affected_rows == 1 ){
-			
-
-			$message = 'Post successfully saved.';
-
-		} //end if query worked
-		else{
-			$message = 'Something went wrong saving your post.';
-		}
-	} //end if valid
-} //end parse
 ?>
+
+
 <main id="main">
 	<h2>Upload</h2>
 
@@ -112,5 +65,6 @@ if( $_POST['did_post'] ){
 
 	</form>
 	
+
 </main>
 <?php include('includes/footer.php'); ?>

@@ -3,8 +3,12 @@
 //which post are we editing?
 $post_id = $_GET['post_id'];
 
-require('includes/header.php'); 
+
+	require('includes/header.php'); 
 	require('includes/security-check.php');
+	//IMAGE UPLOADER
+	include('includes/post-upload-parser.php');
+
 
 //parse the form if submitted
 if( $_POST['did_post'] ){
@@ -44,12 +48,10 @@ if( $_POST['did_post'] ){
 						  	  description = '$description',
 						  	  theme_id = $theme,
 						  	  room_id = $room
-						  	  thumb_img = $image
+						  	  thumb_img = $thumb
+						  	  large_img = $large
 						  	  /*--------------------------------------------------*/
 						  	/*figure out if i need to add another one for large image*/
-
-
-
 
 
 

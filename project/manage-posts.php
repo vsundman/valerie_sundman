@@ -8,10 +8,12 @@
 
 		<?php 
 		//get all the posts by the logged in user, newest first
-		$query = "SELECT post_id, title, thumb_img, room_id AS room, theme_id AS theme
-					FROM posts
-					WHERE user_id = $user_id
-					ORDER BY date DESC";
+			$query = "SELECT posts.post_id, posts.date, posts.title, posts.thumb_img, themes.name AS theme, rooms.name AS room
+					  FROM posts, themes, rooms
+					  WHERE posts.user_id = $user_id
+					  AND posts.theme_id = themes.theme_id
+					  AND posts.room_id = rooms.room_id
+					  ORDER BY posts.date DESC ";
 
 		$result = $db->query($query);
 		if($result->num_rows >= 1){
@@ -19,18 +21,14 @@
  while( $row = $result->fetch_assoc() ){ 
 		?>
 
-
-
-
-
-
 			
 				<figure class="post">
 					
 					<a href="edit-post.php?post_id=<?php echo $row['post_id']; ?>">
 						<div class="uploadfeed">
-							 <?php echo $row['thumb_img']?>  <br>
+							  <img src="<?php echo $row['thumb_img']?>" alt="thumbimage">   <br>
 							 <?php echo $row['title'] ?> <br>
+							 <?php echo $row['date'] ?> <br>
 							 <?php echo $row['room'] ?> | 
 							 <?php echo $row['theme'] ?> <br>
 						</div>

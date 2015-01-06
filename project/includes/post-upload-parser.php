@@ -1,16 +1,63 @@
 <?php 
 //parse image uploads if the form was submitted
-if($_POST['did_upload']){
+if($_POST['did_post']){
+	//get the text fields and sanitize
+	$title = clean_input( $_POST['title'], $db );
+	$description = clean_input( $_POST['description'], $db );
+	$room = $_POST['room'];
+	$theme =$_POST['theme'];
+	$image = $_POST['image_key'];
+	//validate
+	$valid = true;
+	//did they leave title or description blank?
+	if( strlen($title) == 0 OR strlen($description) == 0 ){
+		$valid = false;
+		$message[] = 'Please fill in all fields.';
+	}
+
+	//check for bad value in room or theme
+	if( ! is_numeric($room) ){
+		$valid = false;
+		$message[] = 'invalid room.';
+	}
+
+	if( ! is_numeric($theme) ){
+		$valid = false;
+		$message[] = 'invalid theme.';
+	}
+
+	//if valid, do image upload
+
+	if($valid){
+		$query_addpost = "INSERT INTO posts
+						(title, description, image_key, user_id, room_id, theme_id, date)
+						VALUES
+					 	('$title', '$description', $uploadedfile, $uploadedfile, $user_id, $room, $theme, now())";
+		$result_addpost = $db->query($query_addpost);
+		//make sure it worked
+		if( $db->affected_rows == 1 ){
+			
+
+			$message = 'Post successfully saved.';
+
+		} //end if query worked
+		else{
+			$message = 'Something went wrong saving your post.';
+		}
+	} //end if valid
+
+
+
+
 
 	//file uploading stuff begins
 	
-	$target_path = "uploads/";
+	$target_path = "room-uploads/";
 	
 	//list of image sizes to generate. make sure a column name in your DB matches up with a key for each size
 	$sizes = array(
 		'thumb_img' => 200,
-		'medium_img' => 300,
-		'large_img' => 600 
+		'large_img' => 800 
 	);	
 	
 	// This is the temporary file created by PHP
@@ -71,7 +118,7 @@ if($_POST['did_upload']){
 		//store in DB if it successfully saved the image to the file
 		if($didcreate){
 			//update the user's info
-			$query = "UPDATE users 
+			$query = "UPDATE posts 
 						SET $size_name = '$filename' 
 						WHERE user_id = $user_id";
 			$result = $db->query($query);		
