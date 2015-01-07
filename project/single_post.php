@@ -1,7 +1,13 @@
 <?php
 require('includes/header.php'); 
+
 //figure out which post to display based on the query string like ?post_id=X
 $post_id = $_GET['post_id'];
+
+
+ include('includes/comment-parser.php'); 
+
+
 
 ?>
 
@@ -31,8 +37,7 @@ $post_id = $_GET['post_id'];
 					<figure class="post">
 
 					<div class="singlepost">
-						  <img src="<?php echo $row['image_key']?>" alt="largeimage">  
-
+						  <img src="<?php echo uploaded_image_path( $row['image_key'], 'large_img', false); ?>">
 						 <br>
 						 <?php echo $row['title'] ?> <br>
 						 <?php echo $row['room'] ?> | 
@@ -46,11 +51,41 @@ $post_id = $_GET['post_id'];
 			</figure>
 		</section>
 		
+<?php 
+//////////////        COMMENTS SECTION        ///////////////////////////////////////
+		//get the comments for this post, if there are any to show
+			$query_comments = "SELECT comments.date, comments.body, users.username
+								FROM comments, users
+								WHERE comments.post_id = $post_id
+								AND comments.user_id = users.user_id
+								ORDER BY date DESC";
+		//run it
+			$result_comments = $db->query($query_comments);
+		//check it to make sure at least one comment found
+			if( $result_comments->num_rows >= 1 ){
+				while( $row_comments = $result_comments->fetch_assoc() ){
+					?>
 
-	
+
+						<div>
+							on <?php echo convert_date( $row_comments['date'] ); ?> 
+							<?php echo $row_comments['username']; ?> said:
+							<p> <?php echo $row_comments['body']; ?> </p>
+						</div>
 
 
-		<?php } //end while loop
+
+
+					<?php 
+
+				}//end while loop
+			}else{
+				echo 'This post has no comments, you can be the first!';
+			}
+
+			include('includes/comment-form.php');
+		
+	 } //end while loop
 			}//end if rows
 			else{
 				echo 'Sorry, no posts to show';

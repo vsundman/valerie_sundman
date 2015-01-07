@@ -126,7 +126,7 @@ function user_badge( $user, $db ){
 		$row = $result->fetch_assoc();
 
 		if ( $row['medium_img'] != '' ) {
-			$image = SITE_PATH . $row['medium_img'];
+			$image = SITE_URL . $row['medium_img'];
 		}else{
 			//DOCUMENT_ROOT is htdocs
 			//default img

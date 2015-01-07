@@ -10,6 +10,17 @@ body{
 	border-bottom: 4px solid #afe3d6;
 	margin-bottom: 110px;
 }
+h2.upload{
+	position: relative;
+	left: 300px;
+	bottom: 75px;
+	font-weight: normal;
+	border: 3px solid #6BC0AB;
+	display: inline;
+	padding: 8px;
+	font-size: 18px;
+
+}
 h1{
 	background-image: url('../images/logo.png');
 	width: 266px;
@@ -69,9 +80,9 @@ form  {
 	width: 60%;
 }
 
-
-
 /*NEWEST UPLOADS STYLES*/
+
+
 #wrap {
 	float: left;
 	width: 100%;
@@ -81,12 +92,20 @@ form  {
 	float: left;
 	padding: 10px;
 	margin: 0;
+	background-color: #FFF;
+
 }
 
 img {
 	max-height: 100%;
 	max-width: 100%;
 }
+
+
+
+
+
+
 div.uploadfeed{
 	height: 267px;
 	width: 168px;
@@ -94,6 +113,9 @@ div.uploadfeed{
 	text-align: center;
 	line-height: 25px;
 }
+
+
+
 div.uploadfeed img.thumbs{
 	padding: 10px;
 }

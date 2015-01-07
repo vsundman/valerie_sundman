@@ -11,7 +11,7 @@ $page_number = 1; //default current starting page
 		$phrase = $_GET['phrase'];
 
 		//look up all the published posts that have that phrase in the title, theme name, room name, username or body
-		$query = "SELECT posts.post_id, posts.title, posts.description, posts.image, themes.name AS theme, rooms.name AS 			 room, users.username
+		$query = "SELECT posts.post_id, posts.title, posts.description, posts.image_key, themes.name AS theme, rooms.name AS 			 room, users.username
 				  FROM posts, themes, rooms, users
 				  WHERE users.user_id = posts.user_id
 				  AND posts.theme_id = themes.theme_id
@@ -59,7 +59,7 @@ $page_number = 1; //default current starting page
 
 			<article>
 				<div class="uploadfeed">
-				<?php echo $row['image']?> <br>
+				<img src="<?php echo uploaded_image_path( $row['image_key'], 'thumb_img', false); ?>"> <br>
 				<a href="#"><?php echo $row['username']?></a> <br>
 				 <?php echo $row['title'] ?> <br>
 				 <?php echo $row['room'] ?> | 

@@ -8,7 +8,7 @@
 
 		<?php 
 		//get all the posts by the logged in user, newest first
-			$query = "SELECT posts.post_id, posts.date, posts.title, posts.thumb_img, themes.name AS theme, rooms.name AS room
+			$query = "SELECT posts.post_id, posts.date, posts.title, posts.image_key, themes.name AS theme, rooms.name AS room
 					  FROM posts, themes, rooms
 					  WHERE posts.user_id = $user_id
 					  AND posts.theme_id = themes.theme_id
@@ -26,7 +26,8 @@
 					
 					<a href="edit-post.php?post_id=<?php echo $row['post_id']; ?>">
 						<div class="uploadfeed">
-							  <img src="<?php echo $row['thumb_img']?>" alt="thumbimage">   <br>
+							  	<img src="<?php echo uploaded_image_path( $row['image_key'], 'thumb_img', false); ?>">
+								    <br>
 							 <?php echo $row['title'] ?> <br>
 							 <?php echo $row['date'] ?> <br>
 							 <?php echo $row['room'] ?> | 

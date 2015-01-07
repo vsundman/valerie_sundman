@@ -13,7 +13,7 @@
 
 
 <?php //get all the published posts, most recent first
-		$query = "SELECT posts.post_id, posts.weeklydecor, posts.date, posts.title, posts.thumb_img, themes.name AS theme, rooms.name AS room, users.username
+		$query = "SELECT posts.post_id, posts.weeklydecor, posts.date, posts.title, posts.image_key, themes.name AS theme, rooms.name AS room, users.username
 					  FROM posts, themes, rooms, users
 					  WHERE users.user_id = posts.user_id
 					  AND posts.theme_id = themes.theme_id
@@ -34,7 +34,7 @@
 					
 			 		<a href="single_post.php?post_id=<?php echo $row['post_id'];?>">
 						<div>
-							<img src="<?php echo $row['thumb_img']?>" alt="thumbimage"> <br>
+							<img src="<?php echo uploaded_image_path( $row['image_key'], 'thumb_img', false); ?>"> <br>
 							<h4><?php echo $row['title'] ?></h4>
 							<p>By: <?php echo $row['username'] ?></p> 
 							<p><?php echo $row['date'] ?></p>

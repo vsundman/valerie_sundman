@@ -4,72 +4,11 @@
 $post_id = $_GET['post_id'];
 
 
-	require('includes/header.php'); 
-	require('includes/security-check.php');
-	//IMAGE UPLOADER
-	include('includes/post-upload-parser.php');
+require('includes/header.php'); 
+require('includes/security-check.php');
+//IMAGE UPLOADER
+include('includes/post-update-upload-parser.php');	
 
-
-//parse the form if submitted
-if( $_POST['did_post'] ){
-	//sanitize the data
-	$title = clean_input( $_POST['title'], $db );
-	$description = clean_input( $_POST['description'], $db );
-	$room = $_POST['room'];
-	$theme =$_POST['theme'];
-	$image = 
-
-	//validate
-	$valid = true;
-
-	//did they leave title or description blank?
-	if( strlen($title) == 0 OR strlen($description) == 0 ){
-		$valid = false;
-		$message[] = 'Please fill in all fields.';
-	}
-
-	//check for bad value in room or theme
-	if( ! is_numeric($room) ){
-		$valid = false;
-		$message[] = 'invalid room.';
-	}
-
-	if( ! is_numeric($theme) ){
-		$valid = false;
-		$message[] = 'invalid theme.';
-	}
-
-/////////////////////////////////////////////////////////
-	//edit this post in the database//
-////////////////////////////////////////////////////////
-	if($valid){
-		$query_addpost = "UPDATE posts
-						  SET title = '$title',
-						  	  description = '$description',
-						  	  theme_id = $theme,
-						  	  room_id = $room
-						  	  thumb_img = $thumb
-						  	  large_img = $large
-						  	  /*--------------------------------------------------*/
-						  	/*figure out if i need to add another one for large image*/
-
-
-
-						  WHERE post_id = $post_id
-						  LIMIT 1";
-
-		$result_addpost = $db->query($query_addpost);
-
-		//make sure it worked
-		if( $db->affected_rows == 1 ){
-			$message = 'Post successfully saved.';
-		} //end if query worked
-		else{
-			$message = 'Something went wrong saving your post.';
-		}
-	} //end if valid
-
-} //end parse
 
 
 //Pre-fill the form with the current values, and check to make sure the logged in person wrote it
@@ -92,6 +31,7 @@ $result_post = $db->query($query_post);
 	<h2>Edit Post</h2>
 
 	<?php echo $message?>
+	<img src="<?php echo uploaded_image_path( $row_post['image_key'], 'thumb_img', false); ?>">
 
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>?post_id=<?php echo $post_id ?>" method="post" enctype="multipart/form-data">
 		

@@ -37,7 +37,7 @@ $post_id = $_GET['room_id'];
 <?php
 	if( $post_id > 0 ){
  //get all the published posts with matching theme_id
-		$query = "SELECT posts.post_id, posts.date, posts.title, posts.thumb_img, themes.name AS theme, rooms.name AS room, users.user_id
+		$query = "SELECT posts.post_id, posts.date, posts.title, posts.image_key, themes.name AS theme, rooms.name AS room, users.user_id
 					  FROM posts, themes, rooms, users
 					  WHERE users.user_id = posts.user_id
 					  AND posts.theme_id = themes.theme_id
@@ -57,8 +57,9 @@ $post_id = $_GET['room_id'];
 					<figure class="post">
 						<a href="single_post.php?post_id=<?php echo $row['post_id'];?>">
 							<div class="uploadfeed">
-
-								 <img src="<?php echo $row['thumb_img']?>" alt="thumbimage"> 
+								<div class="container">
+									<img src="<?php echo uploaded_image_path( $row['image_key'], 'thumb_img', false); ?>"> 
+								</div>
 
 								 <br>
 								 <?php echo $row['title'] ?> <br>
@@ -86,7 +87,7 @@ $post_id = $_GET['room_id'];
 
 <?php //get all the published posts, most recent first
 
-		$query = "SELECT posts.post_id, posts.date, posts.title, posts.thumb_img, themes.name AS theme, rooms.name AS room
+		$query = "SELECT posts.post_id, posts.date, posts.title, posts.image_key, themes.name AS theme, rooms.name AS room
 					  FROM posts, themes, rooms, users
 					  WHERE users.user_id = posts.user_id
 					  AND posts.theme_id = themes.theme_id
@@ -107,7 +108,7 @@ $post_id = $_GET['room_id'];
 			<a href="single_post.php?post_id=<?php echo $row['post_id'];?>">
 				<div class="uploadfeed">
 
-					 <img src="<?php echo $row['thumb_img']?>" alt="thumbimage"> 
+					 <img src="<?php echo uploaded_image_path( $row['image_key'], 'thumb_img', false); ?>">
 
 					 <br>
 					 <?php echo $row['title'] ?> <br>

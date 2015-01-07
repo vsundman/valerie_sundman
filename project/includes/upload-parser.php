@@ -68,6 +68,18 @@ if($_POST['did_upload']){
 
 		//store in DB if it successfully saved the image to the file
 		if($didcreate){
+			//DELETE OLD FILE
+			//look up the old image name
+			$query_oldfile = "SELECT medium_img FROM users where user_id = $user_id LIMIT 1";
+            $result_oldfile = $db->query($query_oldfile);
+            if($result_oldfile->num_rows == 1){
+                $row_oldfile = $result_oldfile->fetch_assoc();
+                //get filepath of old file (doesn't work with http: protocol, needs file path)
+                $old_file = $row_oldfile['medium_img'];
+                 //Delete the file from the directory with unlink()
+                unlink($old_file);
+            }
+			//END DELETE OLD FILE
 			//update the user's info
 			$query = "UPDATE users 
 						SET $size_name = '$filename' 

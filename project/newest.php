@@ -23,27 +23,9 @@
 					<figure class="post">
 						<a href="single_post.php?post_id=<?php echo $row['post_id'];?>">
 							<div class="uploadfeed">
-
-
-
-
-
-<!--                               WTF                                    -->
-<!--                               WTF                                    -->
-
-								 <img src="<?php echo uploaded_image_path($row['image_key'], 'thumb_img' = false)?>" alt="thumbimage"> 
-
-$key, $size_name = 'thumb_img', $is_path = true
-
-<!--                               WTF                                    -->
-<!--                               WTF                                    -->
-
-
-
-
-
-
-
+								
+									<img src="<?php echo uploaded_image_path( $row['image_key'], 'thumb_img', false); ?>"> 
+								
 
 								 <br>
 								 <?php echo $row['title'] ?> <br>
