@@ -28,24 +28,25 @@ $result_post = $db->query($query_post);
 	 ?>
 
 
-	<h2>Edit Post</h2>
+	<h2 class="up">Edit Post</h2>
 
 	<?php echo $message?>
-	<img src="<?php echo uploaded_image_path( $row_post['image_key'], 'thumb_img', false); ?>">
 
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>?post_id=<?php echo $post_id ?>" method="post" enctype="multipart/form-data">
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>?post_id=<?php echo $post_id ?>" method="post" id="uploads"enctype="multipart/form-data" >
 		
 		<label for="title">Title:</label>
 		<input type="text" name="title" id="title" value="<?php echo $row_post['title'];?>">
 
+
+		
+			<img src="<?php echo uploaded_image_path( $row_post['image_key'], 'thumb_img', false); ?>">
+		
 		<label for="image">Image:</label>
 		<input type="file" name="uploadedfile" id="image">
+			<p>This is the Image you have on file</p>
 
-		<label for="description">Description:</label>
-		<textarea name="description" id="description"><?php echo $row_post['description']; ?></textarea>
-
-		<fieldset>
-			<h2>Room:</h2>
+<fieldset>
+			<h2 class="up">Room:</h2>
 
 			<?php //get all the categories
 			$query_cats = "SELECT * FROM rooms";
@@ -77,6 +78,16 @@ $result_post = $db->query($query_post);
 				}//end while
 			}//end if cats found ?>
 		</fieldset>
+
+
+
+
+
+
+		<label for="description">Description:</label>
+		<textarea name="description" id="description"><?php echo $row_post['description']; ?></textarea>
+
+		
 
 	
 		<input type="submit" value="Save Post">

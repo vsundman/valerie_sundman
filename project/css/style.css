@@ -5,7 +5,7 @@ body{
 }
 #banner{
 	background-color: #cee6d9;
-	width: 100%;
+	width: 1000px;
 	height: 98px;
 	border-bottom: 4px solid #afe3d6;
 	margin-bottom: 110px;
@@ -23,7 +23,7 @@ h2.upload{
 }
 h1{
 	background-image: url('../images/logo.png');
-	width: 266px;
+	width: 265px;
 	height: 203px;
 	text-indent: -9999px;
 	position: absolute;
@@ -43,12 +43,29 @@ form  {
 	font-family: 'News Cycle', sans-serif;
 	font-size: 32px;
 	font-weight: normal;
-	margin-bottom: 10px;
+	margin: 0;
+	padding: 0;
+}
+/*                     */
+/* PROFILE Room and Theme STYLES*/
+/*                     */
+#content ul#roomlist li{
+	display: inline;
+	padding: 12px;
+	margin-left: 25px;
+	font-family: 'Open Sans Condensed';
+	font-size: 24px;
+	font-weight: normal;
+
+}
+#content ul#roomlist{
+	display: block;
+	margin-bottom: 50px;
 }
 
 #content p {
 	font-family: 'Open Sans Condensed', sans-serif;	
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 30px;
 	padding-top: 0;
 	margin: 0;
@@ -77,23 +94,19 @@ form  {
 
 #wrapper {
 	float: left;
-	width: 60%;
+	width: 600px;
 }
 
 /*NEWEST UPLOADS STYLES*/
 
 
 #wrap {
-	float: left;
-	width: 100%;
-
+	width: 600px;
 }
 .post {
-	float: left;
 	padding: 10px;
 	margin: 0;
 	background-color: #FFF;
-
 }
 
 img {
@@ -101,17 +114,237 @@ img {
 	max-width: 100%;
 }
 
+figure.post{
+	color: #000;
+	position: relative;
+	background-color: transparent;
+	display: inline;/*DO NOT MESS WITH THIS*/
+	float: left;/*DO NOT MESS WITH THIS*/
+}
+
+
+
+/*UPLOAD AND EDIT page styles*/
+h2.up{
+	font-weight: normal;
+	font-family: 'Open Sans Condensed';
+}
+
+form#uploads{
+	width: 960px;
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans Condensed';
+}
+form#uploads label{
+	font-size: 20px;
+	padding-bottom: 5px;
+	color: #494949;
+;
+}
+form#uploads input{
+	font-size: 16px;
+	margin-bottom: 15px;
+	min-width: 225px;
+}
+form#uploads input#title{
+	margin-right: 30px;
+}
+form#uploads input#image{
+	margin-left: 5px;
+}
+form#uploads label[for='description']{
+	display: block;
+}
+form#uploads textarea#description{
+	margin-bottom: 10px;
+	min-height: 100px;
+	min-width: 500px;
+}
+form#uploads fieldset {
+		border-bottom: 1px solid #C1E5DC;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+}
+form#uploads fieldset h2{
+	font-weight: normal;
+	margin-bottom: 0;
+}
+form#uploads fieldset label,
+form#uploads fieldset input{
+	padding: 0;
+	margin: 0;
+	display: inline;
+	min-width: 0;
+	padding: 5px;
+}
+form#uploads fieldset label{
+	margin-left: 20px;
+}
+form#uploads input[type=submit]{
+	border: 2px solid #C1E5DC;
+	background-color: #CEE6D9; 
+	padding: 3px;
+	display: block;
+	margin-top: 15px;
+	font-size: 22px;
+	box-shadow: 3px 3px 5px #333;
+}
+form#uploads img {
+	border: 1px solid #000;
+	margin-right: 15px;
+}
+form#uploads input + p{
+	display: inline;
+	font-size: 14px;
+	position: relative;
+	top: 15px;
+	right: 450px;	
+}
+
+/*LOGIN AND REGISTER FORM STYLES*/
+
+form#loginreg {
+	width: 960px;
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans Condensed';
+
+}
+
+form#loginreg label{
+	font-size: 18px;
+	padding-bottom: 5px;
+	color: #494949;
+	display: block;
+;
+}
+form#loginreg input{
+	font-size: 16px;
+	margin-bottom: 15px;
+	min-width: 225px;
+}
+
+form#loginreg input[type=submit]{
+	border: 2px solid #C1E5DC;
+	background-color: #CEE6D9; 
+	padding: 3px;
+	display: block;
+	margin-top: 15px;
+	font-size: 22px;
+	box-shadow: 3px 3px 5px #333;
+}
+form#loginreg input[type=checkbox]{
+	padding: 0;
+	margin: 0;
+	display: inline;
+	min-width: 0;
+	padding: 5px;
+}
+
+/*single post styles*/
+#content figure.big {
+	text-align: center;
+	width: 1000px;
+}
+
+#content .post h3{
+	color: #000;
+	font-size: 18px;
+	margin: 0;
+	padding-bottom: 25px;
+}
+
+#content div.info h3{
+	font-family: 'News Cycle';
+	font-size: 20px;
+	display: inline;
+	color: #34352D;
+}
+#content div.info p{
+	font-family: 'News Cycle';
+	font-size: 18px;
+	display: inline;
+	line-height: 44px;
+
+}
+#content div.comm2{
+	text-align: left;
+	margin-top: 50px;
+	border-top: 2px solid #98D3C4;
+	padding-top: 10px;
+	font-size: 16px;
+}
+#content div.comm2 p{
+	font-family: arial, sans-serif;
+	padding-top: 10px;
+	color: #494949;
+}
+
+
+#content div.info div.description{
+	margin-top: 30px;
+	text-align: left;
+}
+#content p.nocomm{
+	font-size: 14px;
+	display: block;
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+form#leavecomment {
+	float: left;
+	margin: 30px 0;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 20px;
+	text-align: left;
+}
+form#leavecomment p{
+	display: block;
+	position: relative;
+}
+form#leavecomment input[type=submit]{
+	border: 1px solid #C1E5DC;
+	background-color: #CEE6D9; 
+	padding: 3px;
+	display: block;
+	margin-top: 15px;
+		box-shadow: 3px 3px 5px #333;
+}
+form#leavecomment textarea{
+	display: block;
+	margin-top: 15px;
+	min-width: 500px;
+	min-height: 150px;
+}
+
+
+
+
 
 
 
 
 
 div.uploadfeed{
-	height: 267px;
+	height: 100%;
+	min-height: 265px;
 	width: 168px;
 	border: 3px solid #afe3d6;
 	text-align: center;
 	line-height: 25px;
+	font-family: 'Open Sans Condensed';
 }
 
 
@@ -123,7 +356,7 @@ div.uploadfeed img.thumbs{
 
 /*Search Room Styles*/
 .search-results{
-	width: 100%;
+	width: 1000px;
 	padding: 10px;
 	margin: 0;
 }
@@ -159,8 +392,10 @@ div.uploadfeed img.thumbs{
 #sidebar {
 	background-color: #cee6d9;
 	float: right;
-	width: 30%;
+	width: 300px;
 	border: 4px solid #afe3d6;
+	text-align: center;
+
 }
 #sidebar #vote_yes {
 	float: left;
@@ -172,7 +407,6 @@ div.uploadfeed img.thumbs{
 	margin-left: 170px;
 }
 #sidebar h3 {
-	text-align: center;
 	color: #000;
 }
 #sidebar a{
@@ -213,6 +447,8 @@ ul{
 	color: #000;
 	font-family: 'little_lord_fontleroy_nfRg';
 }
+
+
 
 
 
@@ -270,7 +506,7 @@ header#profilepage h2{
 /* FOOTER STYLES*/
 footer {
 	background-color: #cee6d9;
-	width: 100%;
+	width: 1000px;
 	height: 98px;
 	border-top: 4px solid #afe3d6;
 	clear: both;

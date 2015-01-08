@@ -30,26 +30,25 @@ $post_id = $_GET['post_id'];
 			while( $row = $result->fetch_assoc() ){
 		?>		
 
-	<h2><?php echo $row['title'];?> </h2>
-	<h3>By: <?php echo $row['username'];?></h3>
+
 		
 		<section id="newest">
-					<figure class="post">
+			<figure class="post big">
+				<h2><?php echo $row['title'];?> </h2>
+				<h3>By: <?php echo $row['username'];?></h3>
 
-					<div class="singlepost">
-						  <img src="<?php echo uploaded_image_path( $row['image_key'], 'large_img', false); ?>">
-						 <br>
-						 <?php echo $row['title'] ?> <br>
-						 <?php echo $row['room'] ?> | 
-						 <?php echo $row['theme'] ?> <br>
-						 <?php echo $row['date'] ?>
-						 <br><br>
-						 <?php echo $row['description'] ?>
- 
-					</div>
-	
-			</figure>
-		</section>
+				<div class="singlepost">
+					  <img src="<?php echo uploaded_image_path( $row['image_key'], 'large_img', false); ?>">
+					 <br>
+					 <div class="info">
+					 	 <h3>Room:</h3><p> <?php echo $row['room'] ?> </p><br>
+						 <h3>Theme:</h3><p> <?php echo $row['theme'] ?> </p><br>
+						 <p><?php echo $row['date'] ?></p><br>
+						 <div class="description">
+						 	<h3>Description:</h3><p> <?php echo $row['description'] ?></p>
+						 </div>
+					 </div>
+		
 		
 <?php 
 //////////////        COMMENTS SECTION        ///////////////////////////////////////
@@ -67,7 +66,7 @@ $post_id = $_GET['post_id'];
 					?>
 
 
-						<div>
+						<div class="comm2">
 							on <?php echo convert_date( $row_comments['date'] ); ?> 
 							<?php echo $row_comments['username']; ?> said:
 							<p> <?php echo $row_comments['body']; ?> </p>
@@ -80,7 +79,7 @@ $post_id = $_GET['post_id'];
 
 				}//end while loop
 			}else{
-				echo 'This post has no comments, you can be the first!';
+				echo '<p class="nocomm">This post has no comments, you can be the first!</p>';
 			}
 
 			include('includes/comment-form.php');
@@ -91,7 +90,10 @@ $post_id = $_GET['post_id'];
 				echo 'Sorry, no posts to show';
 			} //end else
 		 ?> 
+		</div>
 
+			</figure>
+		</section>
 	</main>
 </div>
 

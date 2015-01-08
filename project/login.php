@@ -61,9 +61,9 @@ if( $_POST['did_login'] == true ){
 ?>
 
 <?php echo $message ?>
-
+	<h2 class="up">Log In Form</h2>
 <!--Register Form -->
-	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="loginreg">
 		
 		<label>Username:</label>
 		<input type="text" name="username" id="username" value="<?php echo $username;?>">		

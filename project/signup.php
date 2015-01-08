@@ -120,9 +120,9 @@
 
 
 <body>
-
+	<h2 class="up">Sign Up Form</h2>
 <!--Register Form -->
-	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="loginreg">
 		<label>Email Address:</label>
 		<input type="email" name="email" id="email" value="<?php echo $email;?>">
 
