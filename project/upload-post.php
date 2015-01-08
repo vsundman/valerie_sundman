@@ -1,6 +1,9 @@
-<?php require('includes/header.php'); 
+<?php 
 
-	require('includes/security-check.php');
+
+require('includes/header.php'); 
+if($_SESSION['loggedin']){
+
 
 	//IMAGE UPLOADER
 	include('includes/post-upload-parser.php');
@@ -74,7 +77,8 @@
 		<input type="hidden" name="did_post" value="1">
 
 	</form>
-	
+	<?php } ?>
+	<h3>You must be logged in to view this page</h3>
 
 </main>
 <?php include('includes/footer.php'); ?>

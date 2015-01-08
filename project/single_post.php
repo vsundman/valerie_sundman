@@ -81,9 +81,9 @@ $post_id = $_GET['post_id'];
 			}else{
 				echo '<p class="nocomm">This post has no comments, you can be the first!</p>';
 			}
-
+			if($_SESSION['loggedin']){
 			include('includes/comment-form.php');
-		
+		}
 	 } //end while loop
 			}//end if rows
 			else{

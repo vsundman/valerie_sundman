@@ -1,6 +1,6 @@
 <?php 
 
-require('security-check.php');
+
 
  //parse the comments form
  	if( $_POST['did_comment'] ){
