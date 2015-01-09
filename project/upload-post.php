@@ -1,6 +1,5 @@
 <?php 
 
-
 require('includes/header.php'); 
 if($_SESSION['loggedin']){
 

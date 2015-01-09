@@ -1,4 +1,7 @@
 <?php 
+
+require('security-check.php');
+
 //parse image uploads if the form was submitted
 if($_POST['did_post']){
 	//get the text fields and sanitize

@@ -5,6 +5,10 @@ require('includes/config.php');
 //include the helper functions
 include_once('includes/functions.php');
 
+include('includes/login-parser.php');
+
+include('includes/register-parser.php');
+
 //LOGOUT!!!! So that my nav can change
 
 	if( $_GET['action'] == 'logout' ){
@@ -33,8 +37,6 @@ include_once('includes/functions.php');
 		$_SESSION['user_id'] = $_COOKIE['user_id'];
 		
 	}//end elseif 
-	
-
 
 ?>
 
